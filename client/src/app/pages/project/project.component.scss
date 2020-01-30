@@ -1,0 +1,47 @@
+h2{
+    text-align: center;
+}
+
+.centerBlock{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    margin: 5px;
+}
+
+
+
+.container{
+    align-items: center;
+}
+
+
+.all {
+	background: linear-gradient(-45deg, #223e9c, #261a5f, #3748ac, #372e8a);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    width: 100vw;
+    height: 100vh;
+    margin:  0 0 0 0;
+    padding: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

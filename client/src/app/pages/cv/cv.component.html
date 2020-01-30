@@ -1,0 +1,103 @@
+<div class="all">
+    <div class="block">
+        <div class="container" id="capture">
+            <div class="identity">
+                <div class="profilPicture">
+                    <img src="assets/{{service.user?.photo}}" alt="">
+                </div>
+                <div class="contact">
+                    <h4>
+                        Contact
+                    </h4>
+                    <p>
+                        {{service.user?.email}}
+                    </p>
+                    <p>
+                        <a href="{{service.user?.linkedin}}"><img src="assets/linkedin.png" alt=""></a> Clément SICHÉ
+                    </p>
+                    <p>
+                        <a href="{{service.user?.github}}"><img src="assets/github.png" alt=""></a> BlackHighSheep
+                    </p>
+                </div>
+                <div class="techskill">
+                    <h4>
+                        Technical skills 
+                    </h4>
+                    <ul *ngFor="let techskill of service.techskills ">
+                        <li>
+                            {{ techskill?.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="languages">
+                    <h4>
+                        Languages
+                    </h4>
+                    <ul *ngFor="let language of service.languages">
+                        <li>
+                            {{ language?.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="softSkill">
+                    <h4>
+                        Soft skills
+                    </h4>
+                    <ul *ngFor="let softSkill of service.softSkills">
+                        <li>
+                            {{ softSkill?.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experiment">
+                <div class="title">
+                    <H2>
+                        Clément SICHÉ
+                    </H2>
+                    <H3>
+                        Développeur web junior Angular 8 / Node JS
+                    </H3>
+                </div>
+                <div class="resume">
+                    <p>
+                        {{ service.user?.resume}}
+                    </p>
+                </div>
+                <div class="proExperiment">
+                    <h4>
+                        Professional experience
+                    </h4>
+                    <div *ngFor="let p of service.proExperience" >
+                        <h5>
+                            {{ p.job_title }}
+                        </h5>
+                        <p>
+                            {{ p.company }}
+                        </p>
+                        <p>
+                            {{ p.start_date | date : 'MM/yyyy'}} - {{ p.end_date | date : 'MM/yyyy'}}
+                        </p>
+                        <p>
+                            {{ p.description }}
+                        </p>
+                    </div>
+                </div>
+                <div class="trainings">
+                    <h4>       
+                        Professional training
+                    </h4>
+                    <div *ngFor="let p of service.trainings" >
+                        <h5>
+                            {{ p.title }}
+                        </h5>
+                        <p>
+                            {{ p.school }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button (click)="onSaveClicked()">clic</button>

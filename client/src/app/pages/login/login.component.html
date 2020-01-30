@@ -1,0 +1,38 @@
+<section id="connection">
+    <div class="auth-wrapper">
+      <form class="form-horizontal" [formGroup]="authForm" #ngForm="ngForm" data-toggle="modal" data-target="#exampleModal" action=" " (ngSubmit)="loggin(ngForm)">
+        <div class="input">
+         
+          <div class="form-group">
+            <div class="col-xs-10 offset-xs-1 col-md-12">
+              <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" name="email" value="">
+              <div *ngIf="authForm.get('email').errors && !authForm.get('email').pristine" class="error-msg">
+                  <div [hidden]="!authForm.get('email').errors.required">* Le champ email est requis</div>
+                  <div [hidden]="!authForm.get('email').errors.required">* L'email ou le mot de passe n'est pas valide</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-xs-10 offset-xs-1 col-md-12">
+              <input type="password" formControlName="password" class="form-control" id="password" placeholder="Mot de Passe" name="Password" value="">
+              <div *ngIf="authForm.get('password').errors && !authForm.get('password').pristine" class="error-msg">
+                  <div [hidden]="!authForm.get('password').errors.required">* Le champ Mot de passe est requis</div>
+                  <div [hidden]="!authForm.get('password').errors.required">* L'email ou le mot de passe n'est pas valide</div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div [hidden]="!invalid">
+          Les informations renseignées ne sont pas valides.
+        </div>
+    
+        
+        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+          Valider
+        </button>
+
+
+      </form>
+    </div>
